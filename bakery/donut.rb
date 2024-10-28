@@ -20,13 +20,13 @@
 class Donut
   # constructor method
   # positional params
-  def initialize(type, price)
+  def initialize(type, price, calories)
     # named params
     # def initialize(type:, price:, calories:)
     # instance variable
     @donut_type = type
     @donut_price = price
-    # @donut_calories = calories
+    @donut_calorie = calories
   end
 
   # method that returns the type
@@ -41,10 +41,16 @@ class Donut
     @donut_price
   end
 
+  # a method that returns "healthy" if it's 200 calories or less
+  # instance method
+  def donut_calorie
+    @donut_calorie <= 200 ? 'healthy' : nil
+  end
+
   # a method that returns an array of strings with all the types of donuts that the bakery can make
   # class method
   def self.donut_options
     # returns an array of donut options
-    ["glaze", "chocolate", "maple", "sprinkle"]
+    ['glaze', 'chocolate', 'maple', 'sprinkle']
   end
 end
